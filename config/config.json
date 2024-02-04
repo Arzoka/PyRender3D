@@ -1,0 +1,9 @@
+{
+	"version": "0.1",
+	"title": "PyRender3D",
+	"window":{
+		"width": 800,
+		"height": 600,
+		"fps": 30
+	}
+}
