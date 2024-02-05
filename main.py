@@ -42,7 +42,7 @@ if __name__ == '__main__':
             [1, 2, 6, 5]
         ],
 
-        color=pygame.color.Color('white')
+        color=pygame.color.Color('green')
     )
 
     renderer.render(Cube)

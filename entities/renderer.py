@@ -20,7 +20,7 @@ class Renderer:
             perspective_vertices = self.perspective_projection(entity.vertices, 200)
             plane_vertices = self.project_vertices(perspective_vertices)
 
-            self.draw_faces(entity.faces, plane_vertices)
+            self.draw_faces(entity.faces, plane_vertices, entity.color)
 
     @staticmethod
     def perspective_projection(vertices, f):
@@ -56,17 +56,16 @@ class Renderer:
 
         return returned_vertices
 
-    def draw_faces(self, faces, vertices):
+    def draw_faces(self, faces, vertices, color):
         for face in faces:
             face_vertices = [vertices[face[0]], vertices[face[1]], vertices[face[2]], vertices[face[3]]]
 
-            self.draw_polygon(face_vertices)
+            self.draw_polygon(face_vertices, color)
 
-    def draw_polygon(self, vertices):
+    def draw_polygon(self, vertices, color):
         for i in range(len(vertices)):
             vertex = vertices[i]
             next_vertex = vertices[(i + 1) % len(vertices)]
-            color = pygame.color.Color('white')
 
             pygame.draw.line(
                 self.surface,
